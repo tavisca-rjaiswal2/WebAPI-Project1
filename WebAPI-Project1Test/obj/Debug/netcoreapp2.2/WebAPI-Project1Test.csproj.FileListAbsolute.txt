@@ -1,0 +1,16 @@
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1Test.deps.json
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1Test.runtimeconfig.json
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1Test.runtimeconfig.dev.json
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1Test.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1Test.pdb
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\bin\Debug\netcoreapp2.2\WebAPI-Project1.pdb
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.csprojResolveAssemblyReference.cache
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.csproj.CoreCompileInputs.cache
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.AssemblyInfoInputs.cache
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.AssemblyInfo.cs
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.dll
+C:\Users\rjaiswal\source\repos\WebAPI Session\WebAPI-Project1\WebAPI-Project1Test\obj\Debug\netcoreapp2.2\WebAPI-Project1Test.pdb
