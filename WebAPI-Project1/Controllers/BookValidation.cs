@@ -9,41 +9,37 @@ namespace WebAPI_Project1.Controllers
 {
     public class BookValidation
     {
-        public Validation Post(Book book)
+        public List<string> Post(Book book)
         {
-            Validation validation = new Validation { isValid=false,data=null };
+            List<string> errorList = new List<string>();
             Regex r = new Regex("^[a-zA-Z\\s]+$");
 
             if (book.id < 0)
-                validation.data = "Invalid Request, Id should not be negative";
-            else if (!r.IsMatch(book.name))
-                validation.data = "Invalid Request, Name should contain only alphabets";
-            else if (!r.IsMatch(book.category))
-                validation.data = "Invalid Request, Category should contain only alphabets";
-            else if (book.price < 0)
-                validation.data = "Invalid Request, Price should not be negative";
-            else if (!r.IsMatch(book.author))
-                validation.data = "Invalid Request, Author should contain only alphabets";
-            else
-                validation.isValid = true;
-            return validation;
+                errorList.Add("Invalid Request, Id should not be negative");
+            if (!r.IsMatch(book.name))
+                errorList.Add("Invalid Request, Name should contain only alphabets");
+            if (!r.IsMatch(book.category))
+                errorList.Add("Invalid Request, Category should contain only alphabets");
+            if (book.price < 0)
+                errorList.Add("Invalid Request, Price should not be negative");
+            if (!r.IsMatch(book.author))
+                errorList.Add("Invalid Request, Author should contain only alphabets");
+            return errorList;
         }
-        public Validation Put(Book book)
+        public List<string> Put(Book book)
         {
-            Validation validation = new Validation { isValid = false, data = null };
+            List<string> errorList = new List<string>();
             Regex r = new Regex("^[a-zA-Z\\s]+$");
 
             if (!r.IsMatch(book.name))
-                validation.data = "Invalid Request, Name should contain only alphabets";
-            else if (!r.IsMatch(book.category))
-                validation.data = "Invalid Request, Category should contain only alphabets";
-            else if (book.price < 0)
-                validation.data = "Invalid Request, Price should not be negative";
-            else if (!r.IsMatch(book.author))
-                validation.data = "Invalid Request, Author should contain only alphabets";
-            else
-                validation.isValid = true;
-            return validation;
+                errorList.Add("Invalid Request, Name should contain only alphabets");
+            if (!r.IsMatch(book.category))
+                errorList.Add("Invalid Request, Category should contain only alphabets");
+            if (book.price < 0)
+                errorList.Add("Invalid Request, Price should not be negative");
+            if (!r.IsMatch(book.author))
+                errorList.Add("Invalid Request, Author should contain only alphabets");
+            return errorList;
         }
     }
 }

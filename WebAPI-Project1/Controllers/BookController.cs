@@ -28,28 +28,32 @@ namespace WebAPI_Project1.Controllers
         [HttpGet("{id}")]
         public Object Get(int id)
         {
-            return bookService.Get(id);
+            ResponseObject resObj = bookService.Get(id);
+            return StatusCode(resObj.StatusCode,resObj.data);
         }
 
         // POST api/values
         [HttpPost]
-        public Object Post([FromBody]Book book)
+        public ActionResult Post([FromBody]Book book)
         {
-            return bookService.Post(book);
+            ResponseObject resObj = bookService.Post(book);
+            return StatusCode(resObj.StatusCode, resObj.data);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
         public Object Put(int id, [FromBody]Book book)
         {
-            return bookService.Put(id, book);
+            ResponseObject resObj = bookService.Put(id,book);
+            return StatusCode(resObj.StatusCode, resObj.data);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public Object Delete(int id)
         {
-            return bookService.Delete(id);
+            ResponseObject resObj = bookService.Delete(id);
+            return StatusCode(resObj.StatusCode, resObj.data);
         }
     }
 }
