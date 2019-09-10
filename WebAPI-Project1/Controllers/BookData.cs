@@ -35,10 +35,9 @@ namespace WebAPI_Project1.Controllers
                 .ToList();
             return bookList.Find(b => b.id == id);
         }
-        public bool Delete(Book book)
+        public void Delete(Book book)
         {
             bookList.Remove(book);
-            return true;
         }
 
     }

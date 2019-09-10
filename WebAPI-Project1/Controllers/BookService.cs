@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI_Project1.Controllers.Model;
-using Newtonsoft.Json.Linq;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace WebAPI_Project1.Controllers
 {
@@ -40,9 +41,10 @@ namespace WebAPI_Project1.Controllers
         }
         public ResponseObject Post(Book book)
         {
+            ValidationResult result =bookValidation.Validate(book,ruleSet:"*");
             ResponseObject resObj = new ResponseObject();
-            List<string> errorList = bookValidation.Post(book);
-            if ( errorList.Count== 0)
+
+            if (result.IsValid == true)
             {
                 resObj.StatusCode = 201;
                 resObj.data = bookData.Post(book);
@@ -50,16 +52,16 @@ namespace WebAPI_Project1.Controllers
             else
             {
                 resObj.StatusCode = 400;
-                resObj.data = errorList;
+                resObj.data = result.Errors;
             }
             return resObj;
         }
         public ResponseObject Put(int id, Book book)
         {
+            ValidationResult result;
             ResponseObject resObj = new ResponseObject();
-            List<string> errorList;
             if (id < 0)
-                {
+            {
                 resObj.StatusCode = 400;
                 resObj.data = "Invalid Request, Id should not be negative";
             }
@@ -68,10 +70,10 @@ namespace WebAPI_Project1.Controllers
                 resObj.StatusCode = 404;
                 resObj.data = "Invalid Request, Book with given Id not found";
             }
-            else if((errorList = bookValidation.Put(book)).Count>0)
+            else if(!(result = bookValidation.Validate(book)).IsValid)
             {
                 resObj.StatusCode = 400;
-                resObj.data = errorList;
+                resObj.data = result.Errors;
             }
             else
             {
@@ -92,8 +94,8 @@ namespace WebAPI_Project1.Controllers
             }
             else if ((data = bookData.Get(id)) != null)
             {
-                resObj.StatusCode = 200;
-                resObj.data = bookData.Delete(data);
+                resObj.StatusCode = 204;
+                bookData.Delete(data);
             }
             else
             {
