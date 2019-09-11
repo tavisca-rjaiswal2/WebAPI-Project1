@@ -1,0 +1,8 @@
+2019-09-11 11:05:22.1756 INFO called api /api/values
+2019-09-11 11:05:24.8052 INFO returning response
+2019-09-11 11:05:25.0031 INFO called api /favicon.ico
+2019-09-11 11:05:25.0131 INFO returning response
+2019-09-11 11:07:04.2644 INFO called api /api/book
+2019-09-11 11:07:04.9304 INFO returning response
+2019-09-11 11:07:34.8104 INFO called api /api/book/1
+2019-09-11 11:07:35.0276 INFO returning response

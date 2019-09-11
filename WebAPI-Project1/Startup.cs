@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NLog;
+using System.IO;
+using WebAPI_Project1.Logger;
 
 namespace WebAPI_Project1
 {
@@ -17,19 +20,20 @@ namespace WebAPI_Project1
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerManager logger)
         {
             if (env.IsDevelopment())
             {
@@ -40,6 +44,13 @@ namespace WebAPI_Project1
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.Use(async (context, next) =>
+            {
+                logger.LogInfo($"called api {context.Request.Path}");
+                await next.Invoke();
+                logger.LogInfo($"returning response");
+            });
 
             app.UseHttpsRedirection();
             app.UseMvc();
